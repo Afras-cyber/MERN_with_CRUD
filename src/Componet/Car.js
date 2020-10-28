@@ -3,6 +3,7 @@ import Edit from "./edit";
 
 const Car = (car_values) => {
   const [edit, setEdit] = React.useState(false);
+
   return (
     <>
       <div
@@ -49,7 +50,7 @@ const Car = (car_values) => {
                   ></button>
                 </header>
                 <section class="modal-card-body">
-                  <Edit id={car_values._id} setEdit={setEdit()}/>
+                  <Edit id={car_values._id} setEdit={setEdit} />
                 </section>
                 {/* <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>

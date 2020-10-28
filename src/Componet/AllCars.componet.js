@@ -10,43 +10,28 @@ const AllCars = () => {
   const [modal, setModal] = React.useState(false);
   const [token, setToken] = useState(null);
   const [cars, setCar] = useState([]);
-  // const [brand,setBrand]=useState('');
-  // const [color,setColor]=useState('');
-  // const [owner,setOwner]=useState('');
-  // const [carModel,setCarModel]=useState('');
-
 
   useEffect(() => {
-    // const token1 = localStorage.getItem("fm_token");
-    // if (token1) {
-    //   setToken(token);
-      
-    // } else {
-    //   // redirect to 'login' TODO:
-    // }
-            axois.get("http://localhost:2500/rout").then(res => {   
-              console.log(res.data)  
-              // setCar(res.data);
-            });
+    console.log("Calling cards")
+    axois.get("https://run.mocky.io/v3/ba7334fe-7438-40ad-bbdd-3d911c8b8f40").then(res => {
+      console.log(res.data)
+      console.log("Setting cars to state")
+      setCar(res.data);
+    });
   }, []);
 
-  
-  
-
-  
-  
   return (
-    
+
     <div className="container">
       {token ? (
         "Name"
       ) : (
-        <div className="setOfBtn">
-          <Link to="/login">
-            <button className="btn button is-warning">Login</button>
-          </Link>
-        </div>
-      )}
+          <div className="setOfBtn">
+            <Link to="/login">
+              <button className="btn button is-warning">Login</button>
+            </Link>
+          </div>
+        )}
       <div class={`modal ${modal ? "is-active" : ""}`}>
         <div class="modal-background"></div>
         <div class="modal-card">
@@ -61,7 +46,7 @@ const AllCars = () => {
             ></button>
           </header>
           <section class="modal-card-body">
-            <Add/>
+            <Add />
           </section>
           {/* <footer class="modal-card-foot">
                 <button class="button is-success">Save changes</button>
@@ -79,16 +64,15 @@ const AllCars = () => {
         Add Car
       </button>
       <div style={{ display: "flex", flexWrap: "wrap" }}>
-       {
-         cars.map((car_value)=>{
-          return(
-            // console.log(">>>.",car)
-            <Car color={car_value.color} brand={car_value.brand} owner={car_value.owner} />
-          )
-        })
-       }
+        {
+          cars.map((car_value) => {
+            return (
+              <Car color={car_value.color || ''} brand={car_value.brand || ''} owner={car_value.owner || ''} />
+            )
+          })
+        }
       </div>
-     
+
     </div>
   );
 };

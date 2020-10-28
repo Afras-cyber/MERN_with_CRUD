@@ -3,7 +3,7 @@ import useForm from "./useForm";
 import axois from "axios";
 
 
-const Edit = (id,setEdit) => {
+const Edit = (id, setEdit) => {
   const [values, handle] = useForm({
     brand: "",
     model: "",
@@ -17,16 +17,16 @@ const Edit = (id,setEdit) => {
       owner: values.owner,
       model: values.model,
     };
-    
-      axois.get(`http://localhost:2500/rout/by:${id}`).then((res) => {
-        axois
+
+    axois.get(`http://localhost:2500/rout/by:${id}`).then((res) => {
+      axois
         .put(`http://localhost:2500/rout/update:${id}`, edtAddCar)
-          .then(alert(`${values.model} car Edited`));        
-      }
-      );
-      
-      setEdit(false);
-  
+        .then(alert(`${values.model} car Edited`));
+    }
+    );
+
+    setEdit(false);
+
   };
 
   return (
