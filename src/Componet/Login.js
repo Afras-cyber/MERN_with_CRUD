@@ -1,4 +1,4 @@
-import React ,{useEffect}from "react";
+import React, { useEffect } from "react";
 import useForm from "./useForm";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
@@ -10,9 +10,9 @@ const Login = () => {
   //     console.log(res.data);
   //     setCar(res.data);
   //   });
-    
+
   // },[])
-  
+
 
   return (
     <div>
@@ -52,7 +52,7 @@ const Login = () => {
           </div>
 
           <Link to={"/"}>
-            <button className="button is-warning" type="submit">
+            <button className="button is-warning">
               Login
             </button>
           </Link>
