@@ -4,7 +4,7 @@ import "./App.css";
 import SignUp from "./Componet/SignUp";
 import Login from "./Componet/Login";
 import "bulma/css/bulma.css";
-import AllCars from "./Componet/AllCars.componet";
+import AllCars from "./Componet/AllCars";
 
 function App() {
   // const [btn,setBtn]=useBtn({})
