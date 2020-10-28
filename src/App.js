@@ -1,16 +1,23 @@
-import React, { Component } from "react";
+import React from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import "./App.css";
-import AllCars from "./Componet/AllCars.componet";
+import SignUp from "./Componet/SignUp";
+import Login from "./Componet/Login";
 import "bulma/css/bulma.css";
+import AllCars from "./Componet/AllCars.componet";
 
 function App() {
+  // const [btn,setBtn]=useBtn({})
+
   return (
     <Router>
-      <div className="container m-4">
-        <h1>Hello world</h1>
-        <Route path="/" component={AllCars} />
-        {/* <Route path="/signUp" component={SignUp}/>       */}
+      <div className="columns is-mobile">
+        <div className="column is-three-quarters">
+          <Route path="/login" component={Login} exact />
+          <Route path="/" component={AllCars} exact />
+          <Route path="/signup" component={SignUp} exact />
+        </div>
+        <div className="column"></div>
       </div>
     </Router>
   );

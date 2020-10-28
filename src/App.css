@@ -2,3 +2,16 @@
   width:20%;
   height: 40%;
 }
+.sign , .setOfBtn{
+  float: right;
+  marigin-right:10%;
+  display:flex;
+  flex-wrap:wrap;
+}
+.btn{
+  margin:15px;
+} .setOfBtn{
+  float: right;
+  marigin-right:10%;
+  display:inline
+}
