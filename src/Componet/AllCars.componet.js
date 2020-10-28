@@ -17,21 +17,19 @@ const AllCars = () => {
 
 
   useEffect(() => {
-    const token1 = localStorage.getItem("fm_token");
-    if (token1) {
-      setToken(token);
-    } else {
-      // redirect to 'login' TODO:
-    }
+    // const token1 = localStorage.getItem("fm_token");
+    // if (token1) {
+    //   setToken(token);
+      
+    // } else {
+    //   // redirect to 'login' TODO:
+    // }
+            axois.get("http://localhost:2500/rout").then(res => {   
+              console.log(res.data)  
+              // setCar(res.data);
+            });
   }, []);
 
-  useEffect(()=>{
-    axois.get("http://localhost:2500/rout").then((res) => {
-      console.log(res.data);
-      setCar(res.data);
-    });
-    
-  },[])
   
   
 
@@ -53,7 +51,7 @@ const AllCars = () => {
         <div class="modal-background"></div>
         <div class="modal-card">
           <header class="modal-card-head">
-            <p class="modal-card-title">Add Car</p>
+            <p class="modal-card-title"></p>
             <button
               class="delete"
               aria-label="close"
